@@ -14,11 +14,6 @@ app.use(express.urlencoded({ extended: true }));
 // requirement #1 - setting port
 const port = args.port || 5000;
 
-// requirement #2 - default endpoint
-app.use((req, res) => {
-	res.send("404 NOT FOUND");
-});
-
 // requirement #3 - checking endpoint
 app.get('/app/', (req, res) => {
     res.send('200 OK');
@@ -59,6 +54,11 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) =>{
     const rolls = parseInt(req.params.rolls);
     res.send(roll(sides, dice, rolls));
 })
+
+// requirement #2 - default endpoint
+app.use((req, res) => {
+	res.send("404 NOT FOUND");
+});
 
 // requirement #9
 app.listen(port);
