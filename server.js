@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 const port = args.port || 5000;
 
 // requirement #2 - default endpoint
-app.get("*", (req, res) => {
-    res.status(404).send("404 NOT FOUND");
-  })
+app.use((req, res) => {
+	res.send("404 NOT FOUND");
+});
 
 // requirement #3 - checking endpoint
 app.get('/app/', (req, res) => {
