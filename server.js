@@ -59,3 +59,6 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) =>{
     const rolls = parseInt(req.params.rolls);
     res.send(roll(sides, dice, rolls));
 })
+
+// requirement #9
+app.listen(port);
