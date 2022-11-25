@@ -39,14 +39,14 @@ app.post('/app/roll/', (req, res) =>{
 })
 
 // requirement #6 - returns JSON for default rolls and dice
-app.get('/app/roll/:sides/', (req, res, next) =>{
+app.get('/app/roll/:sides/', (req, res) =>{
     const sides = parseInt(req.params.sides);
     res.send(roll(sides, 2, 1));
 })
 
 
 //requirement #7 - returns JSON for default rolls
-app.get('/app/roll/:sides/:dice', (req, res, next) =>{
+app.get('/app/roll/:sides/:dice', (req, res) =>{
     const sides = parseInt(req.params.sides);
     const dice = parseInt(req.params.dice);
     res.send(roll(sides, dice, 1));
